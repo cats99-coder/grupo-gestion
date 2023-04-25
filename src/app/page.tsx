@@ -1,91 +1,85 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Abogacia from "@/components/Abogacia";
+import CarouselReview from "@/components/CarouselReview";
+import Front from "@/components/Front";
+import Section from "@/components/Section";
+import Image from "next/image";
 
 export default function Home() {
+  const serviciosAbogacia = [
+    "Representación legal en casos de derecho mercantil",
+    "Gestión de procesos judiciales y litigios",
+    "Protección y gestión de la propiedad intelectual",
+    "Redacción y revisión de contratos",
+    "Gestión de temas relacionados con el derecho laboral",
+    "Resolución de conflictos y mediación",
+    "Defensa legal en casos de derecho penal",
+    "Asesoramiento y gestión en temas de derecho internacional",
+    "Resolución de conflictos en derecho de la familia",
+    "Asesoramiento y gestión en temas de derecho administrativo",
+  ];
+  const serviciosFiscal = [
+    "Planificación y gestión fiscal de empresas",
+    "Asesoramiento en materia de impuestos y tributos",
+    "Gestión de obligaciones fiscales y presentación de declaraciones",
+    "Optimización de la carga tributaria de empresas y particulares",
+    "Análisis de riesgos fiscales",
+    "Asesoramiento en procesos de reestructuración empresarial",
+    "Asesoramiento en procesos de fusión y adquisición de empresas",
+    "Auditoría fiscal y revisión de declaraciones y liquidaciones",
+    "Asistencia en inspecciones y procedimientos tributarios",
+    "Elaboración de informes y dictámenes fiscales",
+  ];
+  const serviciosGestoria = [
+    "Asesoramiento contable y financiero",
+    "Gestión y tramitación de subvenciones y ayudas",
+    "Gestión de impuestos y obligaciones fiscales",
+    "Asesoramiento y gestión laboral",
+    "Gestión de nóminas y seguros sociales",
+    "Tramitación de altas, bajas y modificaciones de empresas y autónomos",
+    "Confección y presentación de libros contables y cuentas anuales",
+    "Gestión de patrimonios y herencias",
+    "Gestión de documentos y certificados electrónicos",
+    "Asesoramiento y gestión en materia de protección de datos",
+  ];
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="bg-white">
+      <div className="fondo flex flex-col md:grid md:grid-cols-2  md:h-[80vh]">
+        <div className="difuminado flex flex-col space-y-5 rounded-md rounded-t-none p-5">
+          <Front />
+        </div>
+        <div></div>
+      </div>
+      <div className="px-4 md:px-8">
+        <div
+          style={{ marginBottom: "5rem" }}
+          className="relative pt-10 bg-white"
+        >
+          <Section
+            style={{ top: "4rem" }}
+            title="ABOGACÍA"
+            relleno={<Abogacia />}
+            id="abogacia"
+            servicios={serviciosAbogacia}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+            <Section
+              style={{ top: "8rem" }}
+              title="GESTORÍA"
+              id="gestoria"
+              servicios={serviciosGestoria}
+            >
+              <Section
+                style={{ top: "12rem" }}
+                title="FISCAL"
+                id="fiscal"
+                servicios={serviciosFiscal}
+              />
+            </Section>
+          </Section>
+          <div className="w-full bg-white -bottom-20 absolute h-32 z-40"></div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <CarouselReview />
     </main>
-  )
+  );
 }
