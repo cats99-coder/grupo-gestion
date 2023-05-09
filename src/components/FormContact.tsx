@@ -1,42 +1,73 @@
-import FormControl from "./FormControl";
-import Input from "./Input";
-import SelectDepartamento from "./SelectDepartamento";
+"use client";
+import * as React from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
+import Form from "./Form";
+
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
+function TabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          {children}
+        </Box>
+      )}
+    </div>
+  );
+}
+
+function a11yProps(index: number) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  };
+}
 
 export default function FormContact() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+
   return (
-    <footer className="bg-gestion  md:h-screen text-white px-3 py-4 flex flex-col md:grid md:grid-cols-[1fr,min-content,1fr] gap-x-5 items-center justify-center">
-      <div className="text-4xl font-bold flex flex-col items-center">
-        <span>Llama hoy, y pide tu cita online</span>
-        <a className="text-4xl md:text-7xl" href="tel:623433276">
-          623 43 32 76
-        </a>
-      </div>
-      <div className="flex justify-center h-full">
-        <div className="w-2 bg-white hidden md:block h-full"></div>
-      </div>
-      <div className="space-y-3">
-        <SelectDepartamento value="ABOGACIA" />
-        <form className="bg-white text-black p-5 rounded-md space-y-3">
-          <FormControl label="Email">
-            <Input type="email" />
-          </FormControl>
-          <FormControl label="Teléfono">
-            <Input type="number" />
-          </FormControl>
-          <FormControl label="Mensaje">
-            <textarea
-              className="border-2 px-3 py-1 border-black rounded-md"
-              name=""
-              id=""
-              cols={30}
-              rows={10}
-            ></textarea>
-          </FormControl>
-          <button className="bg-gestion hover:bg-red-400 p-2 rounded-md w-full text-white font-bold">
-            Enviar
-          </button>
-        </form>
-      </div>
-    </footer>
+    <Box sx={{ width: "100%" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+          centered
+        >
+          <Tab label="Abogacía" {...a11yProps(0)} />
+          <Tab label="Gestoría" {...a11yProps(1)} />
+          <Tab label="Fiscal" {...a11yProps(2)} />
+        </Tabs>
+      </Box>
+      <TabPanel value={value} index={0}>
+        <Form />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <Form />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <Form />
+      </TabPanel>
+    </Box>
   );
 }

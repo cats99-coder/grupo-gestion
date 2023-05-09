@@ -65,13 +65,6 @@ export default function Section({
           </h1>
         </div>
         {relleno && relleno}
-        <h2 className="font-bold text-lg mt-5">Servicios</h2>
-        <div className="grid grid-cols-[minmax(0,1fr)] max-h-full md:grid-cols-[repeat(auto-fit,350px)] gap-5 relative bg-white z-10">
-          {servicios &&
-            servicios.map((servicio) => {
-              return <Include key={servicio} text={servicio} />;
-            })}
-        </div>
         <div className="mt-16 bg-white flex flex-col">
           {children && children}
         </div>

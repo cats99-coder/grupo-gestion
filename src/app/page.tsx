@@ -1,8 +1,8 @@
 import Abogacia from "@/components/Abogacia";
 import CarouselReview from "@/components/CarouselReview";
+import Fiscal from "@/components/Fiscal";
 import Front from "@/components/Front";
 import Section from "@/components/Section";
-import Image from "next/image";
 
 export default function Home() {
   const serviciosAbogacia = [
@@ -18,28 +18,24 @@ export default function Home() {
     "Asesoramiento y gestión en temas de derecho administrativo",
   ];
   const serviciosFiscal = [
-    "Planificación y gestión fiscal de empresas",
-    "Asesoramiento en materia de impuestos y tributos",
-    "Gestión de obligaciones fiscales y presentación de declaraciones",
-    "Optimización de la carga tributaria de empresas y particulares",
-    "Análisis de riesgos fiscales",
-    "Asesoramiento en procesos de reestructuración empresarial",
-    "Asesoramiento en procesos de fusión y adquisición de empresas",
-    "Auditoría fiscal y revisión de declaraciones y liquidaciones",
-    "Asistencia en inspecciones y procedimientos tributarios",
-    "Elaboración de informes y dictámenes fiscales",
+    "Contratos",
+    "Nóminas",
+    "Confección de seguros sociales",
+    "Gestiones relacionadas con las altas/bajas de trabajadores de empresarios",
+    "Presupuestamos la mejor compañia en precio y prestaciones para cuelquier necesitad. Vehículos, Hogar, Salaud...",
   ];
   const serviciosGestoria = [
-    "Asesoramiento contable y financiero",
-    "Gestión y tramitación de subvenciones y ayudas",
-    "Gestión de impuestos y obligaciones fiscales",
-    "Asesoramiento y gestión laboral",
-    "Gestión de nóminas y seguros sociales",
-    "Tramitación de altas, bajas y modificaciones de empresas y autónomos",
-    "Confección y presentación de libros contables y cuentas anuales",
-    "Gestión de patrimonios y herencias",
-    "Gestión de documentos y certificados electrónicos",
-    "Asesoramiento y gestión en materia de protección de datos",
+    "Transferencias",
+    "Canjes de permisos extranjeros",
+    "Duplicados",
+    "Renovaciones",
+    "Bajas temporales",
+    "Bajas definitivas",
+    "Altas",
+    "Matriculaciones",
+    "Placas verdes",
+    "Distintivos medioambientales",
+    "Subvenciones y ayudas",
   ];
   return (
     <main className="bg-white">
@@ -59,7 +55,7 @@ export default function Home() {
             title="ABOGACÍA"
             relleno={<Abogacia />}
             id="abogacia"
-            servicios={serviciosAbogacia}
+            servicios={[]}
           >
 
             <Section
@@ -72,6 +68,7 @@ export default function Home() {
                 style={{ top: "12rem" }}
                 title="FISCAL"
                 id="fiscal"
+                relleno={<Fiscal />}
                 servicios={serviciosFiscal}
               />
             </Section>

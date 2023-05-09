@@ -58,13 +58,13 @@ export default function Header() {
       </div>
       <ul className="text-white w-full hidden md:flex space-x-11 text-lg justify-end">
         <li>
-          <a id="nav-abogacia" className="relative">Abogacía</a>
+          <a id="nav-abogacia" className="relative cursor-pointer">Abogacía</a>
         </li>
         <li>
-          <a id="nav-gestoria" className="relative">Gestoría</a>
+          <a id="nav-gestoria" className="relative cursor-pointer">Gestoría</a>
         </li>
         <li>
-          <a id="nav-fiscal" className="relative">Fiscal</a>
+          <a id="nav-fiscal" className="relative cursor-pointer">Fiscal</a>
         </li>
         <li>Blog</li>
         <li>Contacto</li>

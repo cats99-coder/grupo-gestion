@@ -30,18 +30,8 @@ export default function Front() {
           width={150}
           height={150}
         />
-        <span className="text-2xl md:text-6xl font-bold">GRUPO GESTIÓN</span>
+        <span className="text-2xl md:text-5xl font-bold">GRUPO GESTIÓN</span>
       </div>
-      <ul id="listado-front" className="space-y-3 list-disc">
-        <li className="text-white text-2xl md:text-4xl opacity-0">
-          Contamos con el personal más cualificado.
-        </li>
-        <li className="text-white text-2xl md:text-4xl opacity-0">
-          Las mejores herramientas del mercado.
-        </li>
-        <li className="text-white text-2xl md:text-4xl opacity-0">Atención inmediata.</li>
-        <li className="text-white text-2xl md:text-4xl opacity-0">Precios económicos.</li>
-      </ul>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import "./globals.css";
-import FormContact from "@/components/FormContact";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Grupo Gestión",
@@ -16,7 +16,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
-        <FormContact />
+        <Footer />
       </body>
     </html>
   );
