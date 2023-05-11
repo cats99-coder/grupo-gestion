@@ -2,6 +2,7 @@ import Abogacia from "@/components/Abogacia";
 import CarouselReview from "@/components/CarouselReview";
 import Fiscal from "@/components/Fiscal";
 import Front from "@/components/Front";
+import Gestoria from "@/components/Gestoria";
 import Section from "@/components/Section";
 
 export default function Home() {
@@ -57,12 +58,12 @@ export default function Home() {
             id="abogacia"
             servicios={[]}
           >
-
             <Section
               style={{ top: "8rem" }}
               title="GESTORÍA"
               id="gestoria"
-              servicios={serviciosGestoria}
+              relleno={<Gestoria />}
+              servicios={[]}
             >
               <Section
                 style={{ top: "12rem" }}
